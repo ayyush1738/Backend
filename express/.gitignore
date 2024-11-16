@@ -8,5 +8,4 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules/
-.gitignore/
-package-lock.json
+package-lock.json/
