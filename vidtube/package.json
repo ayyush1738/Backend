@@ -1,0 +1,30 @@
+{
+  "name": "vidtube",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/script.js",
+    "dev": "nodemon src/script.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongoose",
+    "backend"
+  ],
+  "author": "Ayush",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1"
+  }
+}
