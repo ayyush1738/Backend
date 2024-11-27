@@ -10,5 +10,7 @@ const tweetSchema = Schema(
             type: Schema.Types.ObjectId,
             ref: "User"
         }
-    }
+    }, { timestamp : true }
 )
+
+export const Tweet = mongoose.model("Tweet", tweetSchema);
