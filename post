@@ -1,0 +1,36 @@
+project/
+├── controllers/         # Contains business logic
+│   ├── user.controller.js
+│   ├── auth.controller.js
+│   └── healthcheck.controller.js
+├── models/              # Contains database models
+│   ├── user.model.js
+│   ├── order.model.js
+│   └── product.model.js
+├── routes/              # Contains API routes
+│   ├── user.routes.js
+│   ├── auth.routes.js
+│   └── healthcheck.routes.js
+├── middlewares/         # Custom middleware (e.g., validation, authentication)
+│   ├── auth.middleware.js
+│   └── error.middleware.js
+├── services/            # Contains reusable business logic
+│   ├── user.service.js
+│   └── email.service.js
+├── utils/               # Utility functions and helpers
+│   ├── apiError.js
+│   └── asyncHandler.js
+├── configs/             # Configuration files (e.g., database, environment)
+│   ├── db.config.js
+│   └── env.config.js
+├── app.js               # App entry point
+└── server.js            # Server initialization
+
+
+
+project/
+├── app.js              # Contains everything: routes, controllers, and logic mixed together
+├── routes.js           # Contains all routes, no separation for different features
+├── models/             # Only contains one file for all models
+│   └── models.js
+└── server.js           # Starts the server

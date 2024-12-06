@@ -3,6 +3,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser';
 import healthcheckRouter from './routes/healthcheck.routes.js';
 import userRouter from './routes/user.routes.js';
+import errorHandler from './middleware/error.middlewares.js';
 
 const app = express();
 app.use(express.json({limit: "16kb"}))
@@ -18,5 +19,7 @@ app.use(
 
 app.use("/api/v1/healthcheck", healthcheckRouter);
 app.use("/api/v1/user", userRouter)
+
+app.use(errorHandler)
 
 export default app;
