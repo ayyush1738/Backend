@@ -190,12 +190,12 @@ const refreshAccessToken = asyncHandler(async (req, ers)=>{
         const user = await User.findById(decodedToken?._id);
         if(!user)
         {
-            throw new apiError(404, "User not found!/Invallid refresh token!");
+            throw new apiError(404, "User not found!/Invalid refresh token!");
         }
 
         if(incomingRefreshToken != user?.refreshToken)
         {
-            throw new apiError(404, "User not found!/Invallid refresh token!");
+            throw new apiError(404, "User not found!/Invalid refresh token!");
         }
 
         const options = {
