@@ -166,7 +166,7 @@ const loginUser = asyncHandler(async (req, res) =>{
     .cookie("accessToken", accessToken, options)
     .cookie("refreshToken", refreshToken, options)
     .json(
-        new ApiResponse(
+        new apiResponse(
             200, 
             {
                 user: loggedInUser, accessToken, refreshToken
@@ -175,6 +175,31 @@ const loginUser = asyncHandler(async (req, res) =>{
         )
     )
 
+})
+
+const logoutUser = asyncHandler(async (req, res) => {
+    await User.findByIdAndUpdate(
+        req.User._id,
+        {
+            $set: {
+                refreshToken: undefined
+            }
+        },
+        {
+            new: true
+        }
+    )
+
+    const options = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production" 
+    }
+
+    return res
+    .status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
+    .json(new apiResponse(200, "User logged out successfully"))
 })
 
 const refreshAccessToken = asyncHandler(async (req, ers)=>{
